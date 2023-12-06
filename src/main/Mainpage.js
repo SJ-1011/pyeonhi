@@ -22,11 +22,11 @@ function Mainpage(props) {
     return (
         <div className="container">
             <header>
-                <h1>편의점 상품</h1>
+                <h1>편의점 1+1 행사 상품</h1>
             </header>
             <nav>
-                <button onClick={() => setActiveTab('cu')}>CU</button>
-                <button onClick={() => setActiveTab('emart')}>Emart</button>
+                <button className = {`selectButton ${activeTab == 'cu' ? 'clicked' : ''}`} onClick={() => setActiveTab('cu')}>CU</button>
+                <button className = {`selectButton ${activeTab == 'emart' ? 'clicked' : ''}`} onClick={() => setActiveTab('emart')}>Emart</button>
             </nav>
             <main>
                 {renderList()}

@@ -18,7 +18,7 @@ nav {
     background-color: #007bff; /* 파랑 계열 배경색 */
     padding: 10px;
     border-radius: 10px; /* 모서리를 둥글게 */
-    width: 400px; /* 너비 설정 */
+    width: 300px; /* 너비 설정 */
     margin-bottom: 20px;
 }
 
@@ -40,4 +40,10 @@ main {
     background-color: #e5eef1;
     border-radius: 10px;
     /* 메인 콘텐츠 영역 스타일링 */
+}
+
+.selectButton.clicked{
+    background-color: #0056b3; /* 선택된 페이지의 배경색을 여기에 지정하세요 */
+    color: #fff; /* 선택된 페이지의 텍스트 색상을 여기에 지정하세요 */
+    border: 3px solid #14467c;
 }
