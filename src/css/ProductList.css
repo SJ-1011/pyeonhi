@@ -45,3 +45,8 @@
     background-color: #007bff; /* 선택된 페이지의 배경색을 여기에 지정하세요 */
     color: #fff; /* 선택된 페이지의 텍스트 색상을 여기에 지정하세요 */
   }
+
+.arrow{
+    padding: 10px 15px;
+    margin: 5px;
+}
