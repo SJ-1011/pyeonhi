@@ -118,7 +118,7 @@ const ProductList = ({ conv }) => {
                             </div>
                             <div>{product.name}</div>
                             <div>{product.price}원</div>
-                            <div>{product.event === '1+1' ? '1+1' : '일반'}</div>
+                            <div>{product.event === '1 + 1' ? '1+1' : '일반'}</div>
                         </div>
                     ))}
                     <div className="pagination">
