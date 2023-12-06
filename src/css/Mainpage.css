@@ -37,5 +37,7 @@ button:hover {
 }
 
 main {
+    background-color: #e5eef1;
+    border-radius: 10px;
     /* 메인 콘텐츠 영역 스타일링 */
 }

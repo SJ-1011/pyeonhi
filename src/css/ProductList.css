@@ -31,3 +31,17 @@
     object-fit: cover;
     margin: 0 auto; /* 이미지를 해당 div 내에서 중앙 정렬 */
 }
+
+.pageButton {
+    
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    margin-top: 30px;
+    background-color: #4f6072;
+}
+
+.pageButton.clicked {
+    background-color: #007bff; /* 선택된 페이지의 배경색을 여기에 지정하세요 */
+    color: #fff; /* 선택된 페이지의 텍스트 색상을 여기에 지정하세요 */
+  }
