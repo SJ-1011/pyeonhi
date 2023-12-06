@@ -8,7 +8,7 @@ const ProductList = ({ conv }) => {
     const [active, setActive] = useState(conv);
     const [currentPage, setCurrentPage] = useState(1);
     const [head, setHead] = useState(0);
-    const [tail, setTail] = useState(20);
+    const [tail, setTail] = useState(15);
     const [clickedPage, setClickedPage] = useState(1);
     const [pageCount, setPageCount] = useState(0);
 
@@ -16,23 +16,38 @@ const ProductList = ({ conv }) => {
     const handlePageClick = (page) => {
         console.log('Clicked page:', page);
         setCurrentPage(page);
-        setHead(page * 20 - 20);
-        setTail(page * 20);
+        setHead(page * 15 - 15);
+        setTail(page * 15);
         setClickedPage(page); // 클릭된 페이지 업데이트
     };
 
-    const handleNextPage = () => {
+    const handleNextPageCU = () => {
         console.log(pageCount);
         if (pageCount < 1){
             setPageCount(pageCount+1);
-            handlePageClick(11);
+            handlePageClick((pageCount+1)*10+1);
         }
       };
     
-    const handlePrevPage = () => {
+    const handlePrevPageCU = () => {
         if (pageCount > 0){
             setPageCount(pageCount-1);
-            handlePageClick(10);
+            handlePageClick((pageCount-1)*10+10);
+        }
+     };
+
+     const handleNextPageEmart = () => {
+        console.log(pageCount);
+        if (pageCount < 2){
+            setPageCount(pageCount+1);
+            handlePageClick((pageCount+1)*10+1);
+        }
+      };
+    
+    const handlePrevPageEmart = () => {
+        if (pageCount > 0){
+            setPageCount(pageCount-1);
+            handlePageClick((pageCount-1)*10+10);
         }
      };
 
@@ -72,8 +87,8 @@ const ProductList = ({ conv }) => {
                         </div>
                     ))}
                     <div className="pagination">
-                    <button className="arrow" onClick={() => handlePrevPage()}>&lt;</button>
-                        {[...Array(pageCount == 0 ? 10 : 4).keys()].map((page) => (
+                    <button className="arrow" onClick={() => handlePrevPageCU()}>&lt;</button>
+                        {[...Array(pageCount == 0 ? 10 : 9).keys()].map((page) => (
                             <button
                             key={page + pageCount * 10 + 1}
                             onClick={() => handlePageClick(page + pageCount * 10 + 1)}
@@ -82,7 +97,7 @@ const ProductList = ({ conv }) => {
                                 {page + pageCount * 10 + 1}
                             </button>
                         ))}
-                    <button className="arrow" onClick={() => handleNextPage()}>&gt;</button>
+                    <button className="arrow" onClick={() => handleNextPageCU()}>&gt;</button>
                     </div>
                 </div>
             );
@@ -107,8 +122,8 @@ const ProductList = ({ conv }) => {
                         </div>
                     ))}
                     <div className="pagination">
-                    <button className="arrow" onClick={() => handlePrevPage()}>&lt;</button>
-                        {[...Array(pageCount == 0 ? 10 : 6).keys()].map((page) => (
+                    <button className="arrow" onClick={() => handlePrevPageEmart()}>&lt;</button>
+                        {[...Array(pageCount === 0 ? 10 : (pageCount === 1 ? 10 : 2)).keys()].map((page) => (
                             <button
                             key={page + pageCount * 10 + 1}
                             onClick={() => handlePageClick(page + pageCount * 10 + 1)}
@@ -117,7 +132,7 @@ const ProductList = ({ conv }) => {
                                 {page + pageCount * 10 + 1}
                             </button>
                         ))}
-                    <button className="arrow" onClick={() => handleNextPage()}>&gt;</button>
+                    <button className="arrow" onClick={() => handleNextPageEmart()}>&gt;</button>
                     </div>
                 </div>
             );

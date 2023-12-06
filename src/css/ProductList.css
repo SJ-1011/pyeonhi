@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     margin: 20px;
-    width: 600px; /* 리스트 전체의 폭 설정 */
+    width: 700px; /* 리스트 전체의 폭 설정 */
 }
 
 .product-header, .product-row {
@@ -33,7 +33,6 @@
 }
 
 .pageButton {
-    
     border: none;
     padding: 10px 15px;
     margin: 5px;
@@ -47,6 +46,7 @@
   }
 
 .arrow{
+    border: none;
     padding: 10px 15px;
     margin: 5px;
 }
