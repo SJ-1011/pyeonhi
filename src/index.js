@@ -1,13 +1,14 @@
+// index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Mainpage from "./main/Mainpage";
+import App from './main/App'; // 수정: App 컴포넌트를 불러옴
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Mainpage />
+    <App /> {/* 수정: App 컴포넌트로 변경 */}
   </React.StrictMode>
 );
 

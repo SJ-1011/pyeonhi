@@ -52,7 +52,7 @@ const ProductList = ({ conv }) => {
      };
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/main/list/${conv}?page=${currentPage}`).then(function (response) {
+        axios.get(`http://localhost:4000/main/list/${conv}`).then(function (response) {
             // ProductList에 DB의 내용 삽입
             setProductList(response.data);
             setLoading(false);

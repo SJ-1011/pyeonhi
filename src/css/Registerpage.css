@@ -1,0 +1,23 @@
+.mainDIV2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form2 {
+    width: 300px;
+  } 
+
+.input2 {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+.buttonDIV2{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

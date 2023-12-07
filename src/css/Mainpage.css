@@ -4,11 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh; /* 전체 뷰포트 높이 */
-}
-
-header {
-    margin-bottom: 10px;
+    height: 100vh; /*전체 뷰포트 높이*/
 }
 
 nav {
@@ -30,6 +26,7 @@ button {
     border-radius: 5px; /* 버튼 모서리 둥글게 */
     cursor: pointer; /* 마우스 오버 시 커서 변경 */
     transition: background-color 0.3s; /* 배경색 변경시 트랜지션 효과 */
+    
 }
 
 button:hover {
@@ -46,4 +43,44 @@ main {
     background-color: #0056b3; /* 선택된 페이지의 배경색을 여기에 지정하세요 */
     color: #fff; /* 선택된 페이지의 텍스트 색상을 여기에 지정하세요 */
     border: 3px solid #14467c;
+}
+
+.buttonDIV {
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.loginDIV {
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+    flex-direction: row;
+    width: 100px;
+}
+
+input {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.btn{
+    margin-bottom: 0px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    margin-left: 30px;
+}
+
+.btn2{
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.logoutDIV{
+    display: flex;
+    flex-direction: row;
 }
