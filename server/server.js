@@ -12,7 +12,34 @@ app.use(bodyParser.json());
 app.use("/main", mainRoute);
 
 
+app.post('/search', async (req, res) => {
+    const {searchTerm, activeTab} = req.body;
+    console.log(`검색어는 '${searchTerm}'입니다.`);
+    console.log(`현재 탭은 '${activeTab}'입니다.`);
 
+    if (!searchTerm){
+        console.log('검색어를 입력해 주세요.');
+        return res.status(400).json({ success: false, message: '검색어를 입력해 주세요.' });
+    }
+    const q = `select * from ${activeTab} where name LIKE '%${searchTerm}%'`
+    console.log('쿼리는', q);
+
+    try {
+        await connectDB.query(q, (error, results, fields) => {
+            if (error) {
+                console.error('검색하는 도중 에러가 발생했습니다.', error.message);
+                return res.status(500).json({ success: false, error: true, message: '검색하는 도중 에러가 발생했습니다.'});
+            }
+            console.log('검색을 성공했습니다.');
+            res.json({ success: true, error: false, message: '검색 완료.', product: results});
+            console.log(results);
+        });
+    } catch (error) {
+        console.error('검색 실패.', error.message);
+        return res.status(500).json({ success: false, error: true, message: '검색 실패.'});
+    }
+
+});
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     console.log('아이디, 패스워드 정보를 얻었습니다.');

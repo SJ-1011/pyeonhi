@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/ProductList.css';
 import axios from "axios";
 
-const ProductList = ({ conv }) => {
+const ProductList = ({ conv, searchTerm, search }) => {
     const [productList, setProductList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [active, setActive] = useState(conv);
@@ -52,15 +52,24 @@ const ProductList = ({ conv }) => {
      };
 
     useEffect(() => {
+        if (search == false) {
         axios.get(`http://localhost:4000/main/list/${conv}`).then(function (response) {
             // ProductList에 DB의 내용 삽입
             setProductList(response.data);
             setLoading(false);
+            console.log('전체 목록 출력.');
+            // console.log(response.data);
         }).catch(function (e) {
             console.log(e);
             setLoading(true);
         });
-    }, [conv, currentPage]);
+    }
+        else{
+            console.log('검색 목록 출력.');
+            setProductList(searchTerm);
+            setLoading(false);
+        }
+    }, [conv, currentPage, searchTerm]);
 
 
 
