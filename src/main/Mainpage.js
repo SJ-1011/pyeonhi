@@ -17,7 +17,7 @@ function Mainpage(props) {
         setSearchTerm(e.target.value);
     };
     const handleSearchTerm = async () => {
-        alert(searchTerm);
+        alert('검색어: ' + searchTerm);
         try {
             const response = await axios.post('http://localhost:4000/search', {
                 searchTerm,
@@ -156,8 +156,8 @@ function Mainpage(props) {
                     <h1>편의점 1+1 행사 상품</h1>
                 </header>
                 <nav>
-                    <button className = {`selectButton ${activeTab == 'cu' ? 'clicked' : ''}`} onClick={() => setActiveTab('cu')}>CU</button>
-                    <button className = {`selectButton ${activeTab == 'emart' ? 'clicked' : ''}`} onClick={() => setActiveTab('emart')}>Emart24</button>
+                <button className = {`selectButton ${activeTab == 'cu' ? 'clicked' : ''}`} onClick={navOnClickCU}>CU</button>
+                    <button className = {`selectButton ${activeTab == 'emart' ? 'clicked' : ''}`} onClick={navOnClickEmart}>Emart24</button>
                 </nav>
                 <div>
                 <input className='searchInput'
